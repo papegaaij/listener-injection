@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>inject-service</artifactId>
+		<groupId>nl.topicus.inject</groupId>
+		<version>1.0</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>inject-ear</artifactId>
+	<packaging>ear</packaging>
+
+	<name>DigDag Service EAR</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>nl.topicus.inject</groupId>
+			<artifactId>inject-dao</artifactId>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>nl.topicus.inject</groupId>
+			<artifactId>inject-web</artifactId>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>inject</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<modules>
+						<webModule>
+							<groupId>nl.topicus.inject</groupId>
+							<artifactId>inject-web</artifactId>
+							<contextRoot>/inject</contextRoot>
+						</webModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

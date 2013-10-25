@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm
+ http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+	version="2.0">
+	<persistence-unit-metadata>
+		<persistence-unit-defaults>
+			<entity-listeners>
+				<entity-listener class="nl.topicus.digdag.listener.ExcessiveLoadListener" />
+			</entity-listeners>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<sql-result-set-mapping name="ids">
+    	<column-result name="id" />
+	</sql-result-set-mapping>
+	<sql-result-set-mapping name="none">
+	</sql-result-set-mapping>
+</entity-mappings>
